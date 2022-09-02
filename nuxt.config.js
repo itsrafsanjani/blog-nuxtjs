@@ -14,11 +14,11 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
+  css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/tw-elements.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -30,7 +30,16 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // https://google-fonts.nuxtjs.org/
+    '@nuxtjs/google-fonts'
   ],
+
+  googleFonts: {
+    prefetch: true,
+    families: {
+      Inter: true,
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -55,5 +64,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['tw-elements']
   }
 }
